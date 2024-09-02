@@ -10,7 +10,7 @@ export const cryptoCurrency = createApi({
   endpoints: (builder) => ({
     getMarketCap: builder.query({
       query: (name) => ({
-        url: `${name}?vs_currency=usd`,
+        url: `coins/markets?vs_currency=${name}`,
         method: "GET",
         headers: {
           'accept': 'application/json',
@@ -37,9 +37,46 @@ export const cryptoCurrency = createApi({
           'x-cg-demo-api-key': 'CG-iSvCFvaw8Bgx8GM8fi4htqpi'
         }
       })
+    }),
+    getHistoricalData: builder.query({
+      query: (name) => ({
+        url: `coins/${name.id}/market_chart?vs_currency=${name.currency}&days=${name.duration}`,
+        method: "GET",
+        headers: {
+          'accept': 'application/json',
+          'x-cg-demo-api-key': 'CG-iSvCFvaw8Bgx8GM8fi4htqpi'
+        }
+      })
+    }),
+    getCoinsListData: builder.query({
+      query: () => ({
+        url: `coins/list`,
+        method: "GET",
+        headers: {
+          'accept': 'application/json',
+          'x-cg-demo-api-key': 'CG-iSvCFvaw8Bgx8GM8fi4htqpi'
+        }
+      })
+    }),
+    searchCoin: builder.query({
+      query: (name) => ({
+        url: `search?query=${name}`,
+        method: "GET",
+        headers: {
+          'accept': 'application/json',
+          'x-cg-demo-api-key': 'CG-iSvCFvaw8Bgx8GM8fi4htqpi'
+        }
+      })
     })
   })
 })
 
 
-export const { useGetMarketCapQuery,useGetExchangeRatesQuery,useGetPortfolioDetailsQuery } = cryptoCurrency
+export const {
+  useGetMarketCapQuery,
+  useGetExchangeRatesQuery,
+  useGetPortfolioDetailsQuery,
+  useGetHistoricalDataQuery,
+  useGetCoinsListDataQuery,
+  useSearchCoinQuery
+} = cryptoCurrency

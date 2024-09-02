@@ -4,12 +4,14 @@ import { cryptoCurrency } from './cryptocurrency'
 import { setupListeners } from '@reduxjs/toolkit/query'
 import currencySlice from './currencySlice'
 import exchangeSlice from './exchangeSlice'
+import cryptoSlice from './cryptoSlice'
 
 const store= configureStore({
   reducer: {
     counter: counterSlice,
     currency: currencySlice,
-    exchange:exchangeSlice,
+    exchange: exchangeSlice,
+    crypto:cryptoSlice,
     [cryptoCurrency.reducerPath]: cryptoCurrency.reducer,
   },
   middleware:(getDefaultMiddleware)=>getDefaultMiddleware().concat(cryptoCurrency.middleware)

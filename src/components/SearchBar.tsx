@@ -84,7 +84,7 @@ export const SearchBar = () => {
     }
   })
   return (
-    <div className="flex flex-row space-x-3 outline-none">
+    <div className="flex flex-row gap-2 outline-none">
       <div className="basis-1/6 bg-gray-100 font-bold relative flex flex-col items-center rounded-lg outline-none border-gray-300 border-2">
         <button onClick={() => setIsOpen(!isOpen)} className="w-full h-full flex items-center justify-around font-bold text-lg tracking-wider">
           {currency.toUpperCase()}{" ("+currencyMap.get(currency)+")"}

@@ -28,7 +28,7 @@ export const Analysis = () => {
   const[exchangeValue,setExchangeValue]=useState(1)
   const { data, isLoading } = useGetExchangeRatesQuery('')
   const { data: marketCap } = useGetPortfolioDetailsQuery('')
-
+  const [error, setError] = useState('');
   const [aspectRatio, setAspectRatio] = useState<number>(1); // Default aspect ratio for smaller screens
 
     useEffect(() => {
@@ -149,12 +149,13 @@ export const Analysis = () => {
     setExchangeValue(Number(result.toPrecision(2)));
   }
   const saveInput = (e:ChangeEvent<HTMLInputElement>) => {
-    if (!Number(e.target.value)) {
-      console.log("Enter Valid value")
+    if (!Number(e.target.value) && Number(e.target.value)!==0) {
+      console.log(Number(e.target.value))
+      setError("Enter Valid value")
       return 
     }
     setInput(Number(e.target.value))
-    console.log(e.target.value)
+    setError("")
   }
   return (
     <div className="flex flex-col lg:flex-row gap-2">
@@ -250,6 +251,9 @@ export const Analysis = () => {
             className="py-2 px-5 bg-blue-600 outline-none rounded-md text-white font-sans">
             Exchange
           </button>
+          {
+            error!=="" && <p className="text-red-500">Enter Valid value</p>
+          }
         </div>
       </div>
     </div>

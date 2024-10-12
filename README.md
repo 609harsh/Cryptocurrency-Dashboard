@@ -1,30 +1,15 @@
-# React + TypeScript + Vite
+# Crypt-Dash
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A real-time Cryptocurrency Dashboard that delivers comprehensive analytics on hundreds of cryptocurrencies using the CoinGecko API. The platform allows users to easily exchange and compare currency values. It provides in-depth insights into the top 100 cryptocurrencies by market share, along with graphical data displaying price trends over various time frames, including the past 24 hours, 7 days, 30 days, 6 months, and 1 year.
 
-Currently, two official plugins are available:
+## Tech Stack
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- ReactJs
+- Tailwindcss
+- RTK Query
+- Redux
+- ChartJS
 
-## Expanding the ESLint configuration
+# Demo
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
-
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json', './tsconfig.app.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
-
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+https://youtu.be/EZJyoRxJssY
